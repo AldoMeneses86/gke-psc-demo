@@ -25,8 +25,11 @@ public class SpringBootDemoApplication {
 	public String createPoblacion(@RequestParam(required=false) String poblacionId) {
 		return "Población with ID " + poblacionId + " has been created ✅";
 	}
-
-
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String healthCheck() {
+		return "200 OK";
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDemoApplication.class, args);
